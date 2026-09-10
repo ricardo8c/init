@@ -3,13 +3,13 @@ O objetivo deste repositório é criar um setup inicial para meus servidores lin
 Para instalar o navi, fzf e rclone, rodar o script:
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/ricardo8c/init/main/install.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/ricardo8c/init/refs/heads/main/install.sh)
 ```
 
 Baixar o rclone.conf
 ```bash
 mkdir -p ~/.config/rclone
-wget https://raw.githubusercontent.com/ricardo8c/init/main/rclone/rclone.conf -O rclone.conf
+wget https://raw.githubusercontent.com/ricardo8c/init/refs/heads/main/rclone/rclone.conf -O rclone.conf
 ```
 
 Download navi cheats
