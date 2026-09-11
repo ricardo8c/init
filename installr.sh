@@ -15,8 +15,10 @@ curl https://rclone.org/install.sh | sudo bash
 printf "reloading bash"
 source ~/.bashrc
 
-# criar pasta do rclone.conf
+# baixar o rclone.conf
 mkdir -p ~/.config/rclone
+wget https://raw.githubusercontent.com/ricardo8c/init/main/rclone/rclone.conf -O rclone.conf
+
 
 read -p "Deseja copiar/substituir o rclone.conf? [S/n]: " resposta
 
@@ -27,7 +29,7 @@ fi
 # Verifica se a resposta é 's' ou 'S'
 if [[ "$resposta" =~ ^[Ss]$ ]]; then
     echo "copiando o rclone.conf..."
-    cp rclone/rclone.conf ~/.config/rclone/rclone.conf
+    cp rclone.conf ~/.config/rclone/rclone.conf
 else
-    printf "para copiar o arquivo rclone.conf, execute: cp rclone/rclone.conf ~/.config/rclone/rclone.conf"
+    printf "para copiar o arquivo rclone.conf, execute: cp rclone.conf ~/.config/rclone/rclone.conf"
 fi
