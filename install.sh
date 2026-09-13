@@ -31,3 +31,19 @@ if [[ "$resposta" =~ ^[Ss]$ ]]; then
 else
     printf "para copiar o arquivo rclone.conf, execute: cp rclone/rclone.conf ~/.config/rclone/rclone.conf"
 fi
+
+
+read -p "Deseja baixar mycheats.cheat e core.cheat? [S/n]: " resposta
+
+if [ -z "$resposta" ]; then
+    resposta="s"
+fi
+
+# Verifica se a resposta é 's' ou 'S'
+if [[ "$resposta" =~ ^[Ss]$ ]]; then
+    echo "copiando..."
+    rclone copy rustfs:dev/navi-cheats/mycheats.cheat ~/.local/share/navi/cheats/
+    rclone copy rustfs:dev/navi-cheats/core.cheat ~/.local/share/navi/cheats/
+else
+    printf "para copiar cheats, use o navi/rclone"
+fi
